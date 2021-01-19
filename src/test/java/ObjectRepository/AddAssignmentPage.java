@@ -21,6 +21,10 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentFileUpload;
 	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'dd/mm/yyyy']")
 	public AndroidElement assignmentDatepicker;
+	@AndroidFindBy(id = "com.darisni.teacher:id/toggle_switch")
+	public AndroidElement commentsSlider;
+	@AndroidFindBy(id = "com.darisni.teacher:id/toggle_switch_parent")
+	public AndroidElement showParentsSlider;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Create']")
 	public AndroidElement assignmentConfirm;
 	@AndroidFindBy(id = "com.darisni.teacher:id/btn_positive")
@@ -33,7 +37,7 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentNameVerification;
 	
 	
-	public void addAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date) {
+	public void addAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date, boolean Comments, boolean showParents) {
 		clickWait(createAssignmentStartBtn);
 		createAssignmentStartBtn.click();
 		clickWait(createAssignmentBtn);
@@ -43,6 +47,24 @@ public class AddAssignmentPage extends BaseClass{
 		assignmentDescription.sendKeys(assignmentDesc);
 		assignmentFileUpload.sendKeys(assignmentFile);
 		assignmentDatepicker.sendKeys(Date);
+		if(Comments)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+		commentsSlider.click();
+			
+		}
+		if(showParents)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+			showParentsSlider.click();
+			
+		}
 		assignmentConfirm.click();
 		assignmentPopupConfirm.click();
 		

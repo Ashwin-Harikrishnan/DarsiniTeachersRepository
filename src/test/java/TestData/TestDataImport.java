@@ -23,11 +23,25 @@ Faker faker = new Faker();
 	}
 	
 	public String[] getAddAssignmentData() {
-		testData = new String[4];
+		testData = new String[6];
 		testData[0] = ExcelDataImport.getValue(1, 0);//title
 		testData[1] = ExcelDataImport.getValue(1, 1);//Desc
 		testData[2] = ExcelDataImport.getValue(1, 2);//upload
 		testData[3] = ExcelDataImport.getValue(1, 3);//Date
+		testData[4] = ExcelDataImport.getValue(1, 4);//comment
+		testData[5] = ExcelDataImport.getValue(1, 5);//show parent
+		
+				
+		return testData;
+	}
+	public String[] getAddAnnouncementData() {
+		testData = new String[5];
+		testData[0] = ExcelDataImport.getValue(1, 0);//title
+		testData[1] = ExcelDataImport.getValue(1, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(1, 2);//upload
+		testData[3] = ExcelDataImport.getValue(1, 3);//comment
+		testData[4] = ExcelDataImport.getValue(1, 4);//showParent
+		
 		
 				
 		return testData;

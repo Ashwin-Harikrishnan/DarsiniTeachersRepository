@@ -47,7 +47,7 @@ public class AddAssignmentTest extends BaseClass {
 			testData = TestDataObj.getAddAssignmentData();
 			loginObj.validLogin();
 			classroomObj.assignmentNavigationMethod("Central Integration Planner");
-			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3]);
+			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
 			sleep(1000);
 			actualstring = customXpathMethod(testData[0]).getText();
 			expectedstring = testData[0];

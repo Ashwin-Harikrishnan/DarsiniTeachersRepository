@@ -34,23 +34,23 @@ public class AddAnnouncementTest extends BaseClass {
 		classroomObj = new ClassroomPage(androidDriver);
 		announcementObj = new AddAnnouncementPage(androidDriver);
 		logoutObj = new LogoutPage(androidDriver);
-		/*
-		 * TestDataObj = new TestDataImport(); excelDataObj = new ExcelDataImport();
-		 * excelDataObj.readExcel("AssignmentPage");
-		 */
+
+		TestDataObj = new TestDataImport();
+		excelDataObj = new ExcelDataImport();
+		excelDataObj.readExcel("AnnouncementPage");
 
 	}
 
 	@Test
 	public void addAnnouncementTest() {
 		try {
+			testData = TestDataObj.getAddAnnouncementData();
 			loginObj.validLogin();
 			classroomObj.assignmentNavigationMethod("Central Integration Planner");
-			announcementObj.addAnnouncement();
+			announcementObj.addAnnouncement(testData[0],testData[1],testData[2],Boolean.parseBoolean(testData[3]),Boolean.parseBoolean(testData[4]));
 			sleep(1000);
-			actualstring = customXpathMethod("AnnouncementOne").getText();
-			expectedstring = "AnnouncementOne";
-			
+			actualstring = customXpathMethod(testData[0]).getText();
+			expectedstring = testData[0];
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -59,6 +59,7 @@ public class AddAnnouncementTest extends BaseClass {
 		assertEquals(actualstring, expectedstring);
 
 	}
+
 	@AfterClass
 	public void endTest() {
 		sleep(1000);

@@ -35,31 +35,33 @@ public class AddAnnouncementPage extends BaseClass{
 	@AndroidFindBy(id = "com.darisni.teacher:id/toolbar_left_controller")
 	public AndroidElement announcementbackBtn;
 	
-	public void addAnnouncement() {
+	public void addAnnouncement(String title, String Desc, String upload, boolean comments, boolean showParents) {
 		clickWait(createAnnouncementStartBtn);
 		createAnnouncementStartBtn.click();
 		clickWait(createAnnouncement);
 		createAnnouncement.click();
 		clickWait(announcementTitle);
-		announcementTitle.sendKeys("Announcement");
-		announcementDescription.sendKeys("Announcement Desc one");
-		announcementAttachments.sendKeys("E:\\Users\\Ashwin Harikrishnan\\eclipse-workspace\\com.darsiniteacher\\Resources\\Images\\text2.png");
-		/*if(COMMENTSLIDEREXCELBOOL)
+		announcementTitle.sendKeys(title);
+		announcementDescription.sendKeys(Desc);
+		announcementAttachments.sendKeys(upload);
+		if(comments)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
 		{
 			commentsSlider.click();
+			
 		}
-		else
+		if(showParents)
 		{
 			System.out.println("User has not checked the checkbox");
 		}
-		if(PARENTSLIDEREXCELBOOL)
-		{
-			showParentsSlider.click();
-		}
 		else
 		{
-			System.out.println("User has not checked the checkbox");
-		}*/
+		showParentsSlider.click();
+			
+		}
 		createAnnouncementBtn.click();
 		createAnnouncementConfirmBtn.click();
 	}
