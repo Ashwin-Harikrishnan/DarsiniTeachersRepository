@@ -41,7 +41,7 @@ public class AddAssignmentTest extends BaseClass {
 
 	}
 
-	@Test
+	//@Test
 	public void addAssignmentTest() {
 		try {
 			testData = TestDataObj.getAddAssignmentData();
@@ -58,6 +58,16 @@ public class AddAssignmentTest extends BaseClass {
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
 
+	}
+	
+	@Test
+	public void editAssignmentTest() {
+		testData = TestDataObj.getEditAssignmentData();
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.editAssignmentNavigation();
+		assignmentObj.editAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
+		
 	}
 
 	@AfterClass

@@ -26,6 +26,18 @@ public class ClassroomPage extends BaseClass {
 	public AndroidElement classroomVerificationText;
 	@AndroidFindBy(id = "com.darisni.teacher:id/img_back_navigation")
 	public AndroidElement backBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/txt_btn_announcements")
+	public AndroidElement announcementTab;
+	@AndroidFindBy(id = "com.darisni.teacher:id/txt_btn_assignments")
+	public AndroidElement assignmentTab;
+	@AndroidFindBy(xpath = "//android.widget.ImageView[@resource-id ='com.darisni.teacher:id/settingBtn']")
+	public AndroidElement settingsBtn;//options for assignment/announcement
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Assignment']")
+	public AndroidElement editAssignments;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Announcement']")
+	public AndroidElement editAnnouncements;
+	
+	
 
 	public void assignmentNavigationMethod(String className) {
 
@@ -35,7 +47,21 @@ public class ClassroomPage extends BaseClass {
 		clickWait(customXpathMethod(className));
 		customXpathMethod(className).click();//Central Integration Planner
 	}
+	public void editAssignmentNavigation() {
+		assignmentTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		editAssignments.click();
+		sleep(1000);
+	}
 
+	public void editAnnouncementNavigation() {
+		announcementTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		editAnnouncements.click();
+		sleep(1000);
+	}
 	
 	public ClassroomPage(AndroidDriver<MobileElement> androidDriver) {
 		this.androidDriver = androidDriver;

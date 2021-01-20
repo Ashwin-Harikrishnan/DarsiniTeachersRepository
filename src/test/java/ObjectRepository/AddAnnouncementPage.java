@@ -17,11 +17,11 @@ public class AddAnnouncementPage extends BaseClass{
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Make an announcement']")
 	public AndroidElement createAnnouncement;//After starting to create announcement
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter announcement title']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Announcement Title']//following::android.widget.EditText[1]")
 	public AndroidElement announcementTitle;
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter description']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Announcement Title']//following::android.widget.EditText[2]")
 	public AndroidElement announcementDescription;
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Upload: PDF, JPEG, TEXT']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Announcement Title']//following::android.widget.EditText[3]")
 	public AndroidElement announcementAttachments;
 	@AndroidFindBy(id = "com.darisni.teacher:id/toggle_switch")
 	public AndroidElement commentsSlider;
@@ -31,6 +31,8 @@ public class AddAnnouncementPage extends BaseClass{
 	public AndroidElement createAnnouncementBtn;//After adding details
 	@AndroidFindBy(id = "com.darisni.teacher:id/btn_positive")
 	public AndroidElement createAnnouncementConfirmBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/buttonPanel")
+	public AndroidElement editAnnouncementBtn;
 	
 	@AndroidFindBy(id = "com.darisni.teacher:id/toolbar_left_controller")
 	public AndroidElement announcementbackBtn;
@@ -64,6 +66,33 @@ public class AddAnnouncementPage extends BaseClass{
 		}
 		createAnnouncementBtn.click();
 		createAnnouncementConfirmBtn.click();
+	}
+	public void editAnnouncement(String title, String Desc, String upload, boolean comments, boolean showParents) {
+		
+		clickWait(announcementTitle);
+		announcementTitle.sendKeys(title);
+		announcementDescription.sendKeys(Desc);
+		announcementAttachments.sendKeys(upload);
+		if(comments)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+			commentsSlider.click();
+			
+		}
+		if(showParents)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+		showParentsSlider.click();
+			
+		}
+		editAnnouncementBtn.click();
+	
 	}
 	
 

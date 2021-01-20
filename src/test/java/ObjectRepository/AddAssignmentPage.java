@@ -13,13 +13,13 @@ public class AddAssignmentPage extends BaseClass{
 	AndroidDriver<MobileElement> androidDriver;
 	
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter assignment name']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Assignment Title']//following::android.widget.EditText[1]")
 	public AndroidElement assignmentName;
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter description']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Assignment Title']//following::android.widget.EditText[2]")
 	public AndroidElement assignmentDescription;
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Upload: PDF, JPEG, TEXT']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Assignment Title']//following::android.widget.EditText[3]")
 	public AndroidElement assignmentFileUpload;
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'dd/mm/yyyy']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Assignment Title']//following::android.widget.EditText[4]")
 	public AndroidElement assignmentDatepicker;
 	@AndroidFindBy(id = "com.darisni.teacher:id/toggle_switch")
 	public AndroidElement commentsSlider;
@@ -35,6 +35,8 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement createAssignmentBtn;
 	@AndroidFindBy(id = "com.darisni.teacher:id/txt_card_title")
 	public AndroidElement assignmentNameVerification;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Update']")
+	public AndroidElement updateAssignmentBtn;
 	
 	
 	public void addAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date, boolean Comments, boolean showParents) {
@@ -67,6 +69,35 @@ public class AddAssignmentPage extends BaseClass{
 		}
 		assignmentConfirm.click();
 		assignmentPopupConfirm.click();
+		
+	}
+	
+	public void editAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date, boolean Comments, boolean showParents) {
+		
+		assignmentName.sendKeys(assignmentTitle);
+		assignmentDescription.sendKeys(assignmentDesc);
+		assignmentFileUpload.sendKeys(assignmentFile);
+		assignmentDatepicker.sendKeys(Date);
+		if(Comments)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+		commentsSlider.click();
+			
+		}
+		if(showParents)
+		{
+			System.out.println("User has not checked the checkbox");
+		}
+		else
+		{
+			showParentsSlider.click();
+			
+		}
+		updateAssignmentBtn.click();
+		
 		
 	}
 	

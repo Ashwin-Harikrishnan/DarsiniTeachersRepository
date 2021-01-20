@@ -46,6 +46,30 @@ Faker faker = new Faker();
 				
 		return testData;
 	}
+	public String[] getEditAssignmentData() {
+		testData = new String[6];
+		testData[0] = ExcelDataImport.getValue(6, 0);//title
+		testData[1] = ExcelDataImport.getValue(6, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(6, 2);//upload
+		testData[3] = ExcelDataImport.getValue(6, 3);//Date
+		testData[4] = ExcelDataImport.getValue(6, 4);//comment
+		testData[5] = ExcelDataImport.getValue(6, 5);//show parent
+		
+				
+		return testData;
+	}
+	public String[] getEditAnnouncementData() {
+		testData = new String[5];
+		testData[0] = ExcelDataImport.getValue(6, 0);//title
+		testData[1] = ExcelDataImport.getValue(6, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(6, 2);//upload
+		testData[3] = ExcelDataImport.getValue(6, 3);//comment
+		testData[4] = ExcelDataImport.getValue(6, 4);//showParent
+		
+		
+				
+		return testData;
+	}
 	
 public String[] setFakerData() {
 		
