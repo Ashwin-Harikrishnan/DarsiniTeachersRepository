@@ -2,28 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="239435" started-at="2021-01-21T08:42:49Z" finished-at="2021-01-21T08:46:49Z">
+  <suite name="Default suite" duration-ms="217979" started-at="2021-01-21T13:32:29Z" finished-at="2021-01-21T13:36:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="239435" started-at="2021-01-21T08:42:49Z" finished-at="2021-01-21T08:46:49Z">
-      <class name="TestScripts.AddAnnouncementTest">
-        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.AddAnnouncementTest@6e06451e]" name="setUP" is-config="true" duration-ms="17846" started-at="2021-01-21T14:12:31Z" finished-at="2021-01-21T14:12:49Z">
+    <test name="Default test" duration-ms="217979" started-at="2021-01-21T13:32:29Z" finished-at="2021-01-21T13:36:07Z">
+      <class name="TestScripts.ClassFeedTest">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.ClassFeedTest@72d818d1]" name="setUP" is-config="true" duration-ms="13430" started-at="2021-01-21T19:02:15Z" finished-at="2021-01-21T19:02:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUP -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AddAnnouncementTest@6e06451e]" name="setup" is-config="true" duration-ms="930" started-at="2021-01-21T14:12:49Z" finished-at="2021-01-21T14:12:50Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.ClassFeedTest@72d818d1]" name="setup" is-config="true" duration-ms="236" started-at="2021-01-21T19:02:29Z" finished-at="2021-01-21T19:02:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="editAssignmentTest()[pri:0, instance:TestScripts.AddAnnouncementTest@6e06451e]" name="editAssignmentTest" duration-ms="226948" started-at="2021-01-21T14:12:50Z" finished-at="2021-01-21T14:16:37Z">
+        <test-method status="PASS" signature="classFeedAnnouncementTest()[pri:0, instance:TestScripts.ClassFeedTest@72d818d1]" name="classFeedAnnouncementTest" duration-ms="217724" started-at="2021-01-21T19:02:29Z" finished-at="2021-01-21T19:06:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editAssignmentTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:TestScripts.AddAnnouncementTest@6e06451e]" name="endTest" is-config="true" duration-ms="11534" started-at="2021-01-21T14:16:37Z" finished-at="2021-01-21T14:16:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-      </class> <!-- TestScripts.AddAnnouncementTest -->
+        </test-method> <!-- classFeedAnnouncementTest -->
+      </class> <!-- TestScripts.ClassFeedTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

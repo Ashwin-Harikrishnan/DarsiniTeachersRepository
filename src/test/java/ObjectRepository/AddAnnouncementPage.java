@@ -33,6 +33,14 @@ public class AddAnnouncementPage extends BaseClass{
 	public AndroidElement createAnnouncementConfirmBtn;
 	@AndroidFindBy(id = "com.darisni.teacher:id/buttonPanel")
 	public AndroidElement editAnnouncementBtn;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Browse From Resource Library']")
+	public AndroidElement browseUploadBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/go_button")
+	public AndroidElement uploadConfirmBtn;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Test']")
+	public AndroidElement TestUploadFile;
+	
 	
 	@AndroidFindBy(id = "com.darisni.teacher:id/toolbar_left_controller")
 	public AndroidElement announcementbackBtn;
@@ -45,7 +53,13 @@ public class AddAnnouncementPage extends BaseClass{
 		clickWait(announcementTitle);
 		announcementTitle.sendKeys(title);
 		announcementDescription.sendKeys(Desc);
-		announcementAttachments.sendKeys(upload);
+		announcementAttachments.click();
+		browseUploadBtn.click();
+		sleep(1000);
+		scrollUpMob(2);
+		clickWait(TestUploadFile);
+		TestUploadFile.click();
+		uploadConfirmBtn.click();
 		if(comments)
 		{
 			System.out.println("User has not checked the checkbox");
@@ -73,7 +87,13 @@ public class AddAnnouncementPage extends BaseClass{
 		announcementTitle.click();
 		announcementTitle.sendKeys(title);
 		announcementDescription.sendKeys(Desc);
-		announcementAttachments.sendKeys(upload);
+		announcementAttachments.click();
+		browseUploadBtn.click();
+		sleep(1000);
+		scrollUpMob(2);
+		clickWait(TestUploadFile);
+		TestUploadFile.click();
+		uploadConfirmBtn.click();
 		if(comments)
 		{
 			System.out.println("User has not checked the checkbox");
@@ -103,5 +123,13 @@ public class AddAnnouncementPage extends BaseClass{
 	public AddAnnouncementPage(AndroidDriver<MobileElement> androidDriver){
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);	
+	}
+	private static void sleep(long m) {
+		try {
+			Thread.sleep(m);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

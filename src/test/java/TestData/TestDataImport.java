@@ -54,8 +54,6 @@ Faker faker = new Faker();
 		testData[3] = ExcelDataImport.getValue(6, 3);//Date
 		testData[4] = ExcelDataImport.getValue(6, 4);//comment
 		testData[5] = ExcelDataImport.getValue(6, 5);//show parent
-		
-				
 		return testData;
 	}
 	public String[] getEditAnnouncementData() {
@@ -65,11 +63,40 @@ Faker faker = new Faker();
 		testData[2] = ExcelDataImport.getValue(6, 2);//upload
 		testData[3] = ExcelDataImport.getValue(6, 3);//comment
 		testData[4] = ExcelDataImport.getValue(6, 4);//showParent
-		
-		
-				
 		return testData;
 	}
+	public String[] getHomeFeedAnnouncementData() {
+		testData = new String[5];
+		testData[0] = ExcelDataImport.getValue(13, 0);//title
+		testData[1] = ExcelDataImport.getValue(13, 1);//className
+		testData[2] = ExcelDataImport.getValue(13, 2);//Subject	
+		testData[3] = ExcelDataImport.getValue(13, 3);//Date
+		testData[4] = ExcelDataImport.getValue(13, 4);//comment
+		return testData;
+	}
+	public String[] getHomeFeedAssignmentData() {
+		testData = new String[5];
+		testData[0] = ExcelDataImport.getValue(13, 0);//title
+		testData[1] = ExcelDataImport.getValue(13, 1);//className
+		testData[2] = ExcelDataImport.getValue(13, 2);//Subject	
+		testData[3] = ExcelDataImport.getValue(13, 3);//Date
+		testData[4] = ExcelDataImport.getValue(13, 4);//comment
+		return testData;
+	}
+	
+	public String[] getClassFeedAssignmentData() {
+		testData = new String[7];
+		testData[0] = ExcelDataImport.getValue(21, 0);//title
+		testData[1] = ExcelDataImport.getValue(21, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(21, 2);//Date	
+		testData[3] = ExcelDataImport.getValue(21, 3);//Comments
+		testData[4] = ExcelDataImport.getValue(21, 4);//attachment name
+		testData[5] = ExcelDataImport.getValue(21, 5);//number of views
+		testData[6] = ExcelDataImport.getValue(21, 6);//Due date
+
+		return testData;
+	}
+	
 	
 public String[] setFakerData() {
 		

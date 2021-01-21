@@ -27,6 +27,7 @@ public class HomePage extends BaseClass {
 		customXpathMethod("Central Integration Planner").click();
 	}
 
+	
 	public HomePage(AndroidDriver<MobileElement> androidDriver) {
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);

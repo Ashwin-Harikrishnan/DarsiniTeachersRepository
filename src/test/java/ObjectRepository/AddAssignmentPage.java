@@ -37,8 +37,15 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentNameVerification;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Update']")
 	public AndroidElement updateAssignmentBtn;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Browse From Resource Library']")
+	public AndroidElement browseUploadBtn;
 	@AndroidFindBy(id = "android:id/button2")
 	public AndroidElement datePickerCancelBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/go_button")
+	public AndroidElement uploadConfirmBtn;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Test']")
+	public AndroidElement TestUploadFile;
 	
 
 	
@@ -51,7 +58,15 @@ public class AddAssignmentPage extends BaseClass{
 		clickWait(assignmentName);
 		assignmentName.sendKeys(assignmentTitle);
 		assignmentDescription.sendKeys(assignmentDesc);
-		assignmentFileUpload.sendKeys(assignmentFile);
+		assignmentFileUpload.click();
+		browseUploadBtn.click();
+		sleep(1000);
+		scrollUpMob(2);
+		clickWait(TestUploadFile);
+		TestUploadFile.click();
+		uploadConfirmBtn.click();
+		
+		
 		assignmentDatepicker.sendKeys(Date);
 		
 		if(Comments)
@@ -81,7 +96,13 @@ public class AddAssignmentPage extends BaseClass{
 		
 		assignmentName.sendKeys(assignmentTitle);
 		assignmentDescription.sendKeys(assignmentDesc);
-		assignmentFileUpload.sendKeys(assignmentFile);
+		assignmentFileUpload.click();
+		browseUploadBtn.click();
+		sleep(1000);
+		scrollUpMob(2);
+		clickWait(TestUploadFile);
+		TestUploadFile.click();
+		uploadConfirmBtn.click();
 		assignmentDatepicker.sendKeys(Date);
 		assignmentDatepicker.click();
 		datePickerCancelBtn.click();
@@ -111,6 +132,14 @@ public class AddAssignmentPage extends BaseClass{
 	public AddAssignmentPage(AndroidDriver<MobileElement> androidDriver){
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);	
+	}
+	private static void sleep(long m) {
+		try {
+			Thread.sleep(m);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
