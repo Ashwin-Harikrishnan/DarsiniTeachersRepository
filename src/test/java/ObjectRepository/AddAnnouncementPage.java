@@ -70,6 +70,7 @@ public class AddAnnouncementPage extends BaseClass{
 	public void editAnnouncement(String title, String Desc, String upload, boolean comments, boolean showParents) {
 		
 		clickWait(announcementTitle);
+		announcementTitle.click();
 		announcementTitle.sendKeys(title);
 		announcementDescription.sendKeys(Desc);
 		announcementAttachments.sendKeys(upload);

@@ -41,7 +41,7 @@ public class AddAnnouncementTest extends BaseClass {
 
 	}
 
-	@Test
+	//@Test
 	public void addAnnouncementTest() {
 		try {
 			testData = TestDataObj.getAddAnnouncementData();
@@ -57,6 +57,26 @@ public class AddAnnouncementTest extends BaseClass {
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
+
+	}
+	@Test
+	public void editAssignmentTest() {
+		try {
+		testData = TestDataObj.getEditAnnouncementData();
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.editAnnouncementNavigation();
+		announcementObj.editAnnouncement(testData[0], testData[1], testData[2], Boolean.parseBoolean(testData[3]),Boolean.parseBoolean(testData[4]));
+		System.out.println("Verification: ");
+		sleep(1000);
+		actualstring = customXpathMethod(testData[0]).getText();
+		expectedstring = testData[0];
+
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+	System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
+	assertEquals(actualstring, expectedstring);
 
 	}
 

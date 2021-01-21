@@ -62,15 +62,25 @@ public class AddAssignmentTest extends BaseClass {
 	
 	@Test
 	public void editAssignmentTest() {
+		try {
 		testData = TestDataObj.getEditAssignmentData();
 		loginObj.validLogin();
 		classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		classroomObj.editAssignmentNavigation();
 		assignmentObj.editAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
-		
+		sleep(1000);
+		actualstring = customXpathMethod(testData[0]).getText();
+		expectedstring = testData[0];
+
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+	System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
+	assertEquals(actualstring, expectedstring);
+
 	}
 
-	@AfterClass
+	//@AfterClass
 	public void endTest() {
 		sleep(1000);
 		classroomObj.backBtn.click();

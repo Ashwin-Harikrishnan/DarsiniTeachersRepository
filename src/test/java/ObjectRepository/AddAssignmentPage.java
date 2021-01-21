@@ -37,6 +37,10 @@ public class AddAssignmentPage extends BaseClass{
 	public AndroidElement assignmentNameVerification;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Update']")
 	public AndroidElement updateAssignmentBtn;
+	@AndroidFindBy(id = "android:id/button2")
+	public AndroidElement datePickerCancelBtn;
+	
+
 	
 	
 	public void addAssignment(String assignmentTitle, String assignmentDesc, String assignmentFile, String Date, boolean Comments, boolean showParents) {
@@ -49,6 +53,7 @@ public class AddAssignmentPage extends BaseClass{
 		assignmentDescription.sendKeys(assignmentDesc);
 		assignmentFileUpload.sendKeys(assignmentFile);
 		assignmentDatepicker.sendKeys(Date);
+		
 		if(Comments)
 		{
 			System.out.println("User has not checked the checkbox");
@@ -78,6 +83,8 @@ public class AddAssignmentPage extends BaseClass{
 		assignmentDescription.sendKeys(assignmentDesc);
 		assignmentFileUpload.sendKeys(assignmentFile);
 		assignmentDatepicker.sendKeys(Date);
+		assignmentDatepicker.click();
+		datePickerCancelBtn.click();
 		if(Comments)
 		{
 			System.out.println("User has not checked the checkbox");
