@@ -79,6 +79,31 @@ public class AddAssignmentTest extends BaseClass {
 	assertEquals(actualstring, expectedstring);
 
 	}
+	
+	@Test
+	public void disableAssignmentCommentsTest() {
+		try {
+		
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.disableAssignmentComments();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	@Test
+	public void enableAssignmentCommentsTest() {
+		try {
+		
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.enableAssignmentComments();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	//@AfterClass
 	public void endTest() {

@@ -59,8 +59,8 @@ public class AddAnnouncementTest extends BaseClass {
 		assertEquals(actualstring, expectedstring);
 
 	}
-	@Test
-	public void editAssignmentTest() {
+	//@Test
+	public void editAnnoucementTest() {
 		try {
 		testData = TestDataObj.getEditAnnouncementData();
 		loginObj.validLogin();
@@ -79,6 +79,31 @@ public class AddAnnouncementTest extends BaseClass {
 	assertEquals(actualstring, expectedstring);
 
 	}
+	
+	@Test
+	public void disableAnnouncementCommentsTest() {
+		try {
+		
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.disableAnnouncementComments();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	//@Test
+	public void enableAnnouncementCommentsTest() {
+		try {
+		
+		loginObj.validLogin();
+		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.enableAnnouncementComments();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	@AfterClass
 	public void endTest() {
@@ -87,6 +112,9 @@ public class AddAnnouncementTest extends BaseClass {
 		logoutObj.logout();
 
 	}
+	
+	
+
 
 	private static void sleep(long m) {
 		try {

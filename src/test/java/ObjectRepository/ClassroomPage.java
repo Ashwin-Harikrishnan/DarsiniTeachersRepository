@@ -36,6 +36,11 @@ public class ClassroomPage extends BaseClass {
 	public AndroidElement editAssignments;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Announcement']")
 	public AndroidElement editAnnouncements;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Disable Comments']")
+	public AndroidElement disableComments;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Enable Comments']")
+	public AndroidElement enableComments;
+	
 	
 	
 
@@ -63,6 +68,34 @@ public class ClassroomPage extends BaseClass {
 		sleep(1000);
 	}
 	
+	public void disableAnnouncementComments() {
+		announcementTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		disableComments.click();
+		sleep(1000);
+	}
+	public void enableAnnouncementComments() {
+		announcementTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		enableComments.click();
+		sleep(1000);
+	}
+	public void disableAssignmentComments() {
+		assignmentTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		disableComments.click();
+		sleep(1000);
+	}
+	public void enableAssignmentComments() {
+		assignmentTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		enableComments.click();
+		sleep(1000);
+	}
 	public ClassroomPage(AndroidDriver<MobileElement> androidDriver) {
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);
