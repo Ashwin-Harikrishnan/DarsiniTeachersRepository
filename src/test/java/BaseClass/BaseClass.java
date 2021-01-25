@@ -40,6 +40,8 @@ public class BaseClass {
 				caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "900");
 				caps.setCapability(MobileCapabilityType.APP,
 						"E:\\\\Random Crap\\\\Work\\\\Downloads\\\\Darisni Teachers - v1.52 - UAT.apk");
+				caps.setCapability("unicodeKeyboard", "true");                                     
+				caps.setCapability("resetKeyboard", "true");
 				// URL url = new URL("http://127.0.0.1:4723/wd/hub");
 				androidDriver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 				break;

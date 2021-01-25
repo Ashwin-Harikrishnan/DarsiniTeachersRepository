@@ -34,6 +34,9 @@ public class ClassroomPage extends BaseClass {
 	public AndroidElement settingsBtn;//options for assignment/announcement
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Assignment']")
 	public AndroidElement editAssignments;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Delete']")
+	public AndroidElement deleteBtn;
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Announcement']")
 	public AndroidElement editAnnouncements;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Disable Comments']")
@@ -94,6 +97,20 @@ public class ClassroomPage extends BaseClass {
 		clickWait(settingsBtn);
 		settingsBtn.click();
 		enableComments.click();
+		sleep(1000);
+	}
+	public void deleteAssignment() {
+		assignmentTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		deleteBtn.click();
+		sleep(1000);
+	}
+	public void deleteAnnouncement() {
+		announcementTab.click();
+		clickWait(settingsBtn);
+		settingsBtn.click();
+		deleteBtn.click();
 		sleep(1000);
 	}
 	public ClassroomPage(AndroidDriver<MobileElement> androidDriver) {

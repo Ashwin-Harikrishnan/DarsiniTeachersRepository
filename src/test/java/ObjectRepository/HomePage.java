@@ -17,6 +17,17 @@ public class HomePage extends BaseClass {
 	public AndroidElement classBtn;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Profile']")
 	public AndroidElement profileBtn;
+	@AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"Home\"]")
+	public AndroidElement homeBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/search_button")
+	public AndroidElement searchBtn;
+	@AndroidFindBy(id = "com.darisni.teacher:id/searchView")
+	public AndroidElement searchBar;
+	@AndroidFindBy(id = "com.darisni.teacher:id/emptyTextView")
+	public AndroidElement noResultsMessage;
+	
+
+	
 
 	public void assignmentNavigationMethod() {
 
