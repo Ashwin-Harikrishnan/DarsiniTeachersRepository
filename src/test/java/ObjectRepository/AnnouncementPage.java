@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class AddAnnouncementPage extends BaseClass{
+public class AnnouncementPage extends BaseClass{
 	AndroidDriver<MobileElement> androidDriver;
 
 	@AndroidFindBy(id = "com.darisni.teacher:id/add_button")
@@ -37,13 +37,14 @@ public class AddAnnouncementPage extends BaseClass{
 	public AndroidElement browseUploadBtn;
 	@AndroidFindBy(id = "com.darisni.teacher:id/go_button")
 	public AndroidElement uploadConfirmBtn;
-	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Test']")
 	public AndroidElement TestUploadFile;
-	
-	
 	@AndroidFindBy(id = "com.darisni.teacher:id/toolbar_left_controller")
 	public AndroidElement announcementbackBtn;
+	
+	
+	
+	
 	
 	public void addAnnouncement(String title, String Desc, String upload, boolean comments, boolean showParents) {
 		clickWait(createAnnouncementStartBtn);
@@ -120,7 +121,7 @@ public class AddAnnouncementPage extends BaseClass{
 	
 	
 	
-	public AddAnnouncementPage(AndroidDriver<MobileElement> androidDriver){
+	public AnnouncementPage(AndroidDriver<MobileElement> androidDriver){
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);	
 	}

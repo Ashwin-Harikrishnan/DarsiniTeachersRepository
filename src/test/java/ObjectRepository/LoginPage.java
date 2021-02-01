@@ -46,8 +46,8 @@ public class LoginPage extends BaseClass{
 		sleep(5000);
 		//clickWait(loginStart);
 		loginStart.click();
-		emailInput.sendKeys("chinchugs+2@gmail.com");
-		passwordInput.sendKeys("4916");
+		emailInput.sendKeys("tomcherian97+3@gmail.com");//chinchugs+2@gmail.com
+		passwordInput.sendKeys("9000");//4916
 		loginBtn.click();
 		sleep(1000);
 		//deviceLoginCheck(deviceLimitBtn);

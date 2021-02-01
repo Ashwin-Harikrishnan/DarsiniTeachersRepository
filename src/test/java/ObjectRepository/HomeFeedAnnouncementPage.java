@@ -1,9 +1,7 @@
 package ObjectRepository;
 
-import java.util.ArrayList;
 
 import org.openqa.selenium.support.PageFactory;
-
 import BaseClass.BaseClass;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -17,11 +15,7 @@ public class HomeFeedAnnouncementPage extends BaseClass{
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Assignment Title']//following::android.widget.EditText[1]")
 	public AndroidElement assignmentName;
-	
-	
-	
-	
-	
+
 	
 	
 	public HomeFeedAnnouncementPage(AndroidDriver<MobileElement> androidDriver){

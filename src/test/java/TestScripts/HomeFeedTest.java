@@ -9,21 +9,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
-import ObjectRepository.AddAssignmentPage;
+import ObjectRepository.AssignmentPage;
 import ObjectRepository.ClassroomPage;
+import ObjectRepository.HomePage;
 import ObjectRepository.LoginPage;
-import ObjectRepository.LogoutPage;
+import ObjectRepository.ProfilePage;
 import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
 public class HomeFeedTest extends BaseClass{
 	ClassroomPage classroomObj;
-	AddAssignmentPage assignmentObj;
+	AssignmentPage assignmentObj;
 	LoginPage loginObj;
+	HomePage homeObj;
 	static TestDataImport TestDataObj;
 	static ExcelDataImport excelDataObj;
 	static String[] testData;
-	LogoutPage logoutObj;
+	ProfilePage logoutObj;
 	String actualstring;
 	String expectedstring;
 	String verification = "";
@@ -35,10 +37,11 @@ public class HomeFeedTest extends BaseClass{
 
 		loginObj = new LoginPage(androidDriver);
 		classroomObj = new ClassroomPage(androidDriver);
-		assignmentObj = new AddAssignmentPage(androidDriver);
-		logoutObj = new LogoutPage(androidDriver);
+		assignmentObj = new AssignmentPage(androidDriver);
+		logoutObj = new ProfilePage(androidDriver);
 		TestDataObj = new TestDataImport();
 		excelDataObj = new ExcelDataImport();
+		homeObj = new HomePage(androidDriver);
 		
 		
 
@@ -50,6 +53,8 @@ public void HomeFeedAnnouncementTest() {
 			excelDataObj.readExcel("AnnouncementPage");
 		testData = TestDataObj.getHomeFeedAnnouncementData();
 		loginObj.validLogin();
+		homeObj.searchBar.sendKeys(testData[0]);
+		homeObj.searchBtn.click();
 		
 		//ACTUAL
 		verification = customXpathMethod(testData[0]).getText();
@@ -87,7 +92,8 @@ public void HomeFeedAnnouncementTest() {
 			excelDataObj.readExcel("AssignmentPage");
 			testData = TestDataObj.getHomeFeedAssignmentData();
 			loginObj.validLogin();
-			
+			homeObj.searchBar.sendKeys(testData[0]);
+			homeObj.searchBtn.click();
 			//ACTUAL
 			verification = customXpathMethod(testData[0]).getText();
 			actualArray.add(verification);

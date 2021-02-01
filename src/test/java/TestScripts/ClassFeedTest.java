@@ -9,21 +9,21 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
-import ObjectRepository.AddAssignmentPage;
+import ObjectRepository.AssignmentPage;
 import ObjectRepository.ClassroomPage;
 import ObjectRepository.LoginPage;
-import ObjectRepository.LogoutPage;
+import ObjectRepository.ProfilePage;
 import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
 public class ClassFeedTest extends BaseClass{
 	ClassroomPage classroomObj;
-	AddAssignmentPage assignmentObj;
+	AssignmentPage assignmentObj;
 	LoginPage loginObj;
 	static TestDataImport TestDataObj;
 	static ExcelDataImport excelDataObj;
 	static String[] testData;
-	LogoutPage logoutObj;
+	ProfilePage logoutObj;
 	String actualstring;
 	String expectedstring;
 	String verification = "";
@@ -35,8 +35,8 @@ public class ClassFeedTest extends BaseClass{
 
 		loginObj = new LoginPage(androidDriver);
 		classroomObj = new ClassroomPage(androidDriver);
-		assignmentObj = new AddAssignmentPage(androidDriver);
-		logoutObj = new LogoutPage(androidDriver);
+		assignmentObj = new AssignmentPage(androidDriver);
+		logoutObj = new ProfilePage(androidDriver);
 		TestDataObj = new TestDataImport();
 		excelDataObj = new ExcelDataImport();
 		
@@ -44,13 +44,13 @@ public class ClassFeedTest extends BaseClass{
 
 	}
 	
-	//@Test
+	@Test
 	public void classFeedAssignmentTest() {
 		try {
 		excelDataObj.readExcel("AssignmentPage");
 		testData = TestDataObj.getClassFeedAssignmentData();
 		loginObj.validLogin();
-		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		classroomObj.assignmentTab.click();
 		//ACTUAL
 		verification = customXpathMethod(testData[0]).getText();
@@ -87,7 +87,7 @@ public class ClassFeedTest extends BaseClass{
 	
 	}
 	
-	@Test
+	//@Test
 	public void classFeedAnnouncementTest() {
 		try {
 		excelDataObj.readExcel("AnnouncementPage");

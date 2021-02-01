@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class AddAssignmentPage extends BaseClass{
+public class AssignmentPage extends BaseClass{
 	AndroidDriver<MobileElement> androidDriver;
 	
 	
@@ -129,7 +129,7 @@ public class AddAssignmentPage extends BaseClass{
 		
 	}
 	
-	public AddAssignmentPage(AndroidDriver<MobileElement> androidDriver){
+	public AssignmentPage(AndroidDriver<MobileElement> androidDriver){
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);	
 	}

@@ -12,7 +12,7 @@ import ObjectRepository.AddClassroomPage;
 import ObjectRepository.ClassroomPage;
 import ObjectRepository.HomePage;
 import ObjectRepository.LoginPage;
-import ObjectRepository.LogoutPage;
+import ObjectRepository.ProfilePage;
 import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
@@ -21,7 +21,7 @@ public class AddClassroomTest extends BaseClass {
 	static TestDataImport TestDataObj;
 	static ExcelDataImport excelDataObj;
 	static String[] testData;
-	LogoutPage logoutObj;
+	ProfilePage logoutObj;
 	LoginPage loginObj;
 	HomePage homeObj;
 	ClassroomPage classroomObj;
@@ -34,7 +34,7 @@ public class AddClassroomTest extends BaseClass {
 		loginObj = new LoginPage(androidDriver);
 		classroomObj = new ClassroomPage(androidDriver);
 		addClassObj = new AddClassroomPage(androidDriver);
-		logoutObj = new LogoutPage(androidDriver);
+		logoutObj = new ProfilePage(androidDriver);
 		TestDataObj = new TestDataImport();
 		excelDataObj = new ExcelDataImport();
 		excelDataObj.readExcel("Sheet1");

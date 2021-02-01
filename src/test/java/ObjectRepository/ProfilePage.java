@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class LogoutPage extends BaseClass {
+public class ProfilePage extends BaseClass {
 
 	BaseClass obj = new BaseClass();
 	AndroidDriver<MobileElement> androidDriver;
@@ -20,6 +20,21 @@ public class LogoutPage extends BaseClass {
 	public AndroidElement logoutBtn;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Okay']")
 	public AndroidElement logoutBtnConfirm;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Change Password']")
+	public AndroidElement changePassword;
+	@AndroidFindBy(id = "com.darisni.teacher:id/txtBtnEdit")
+	public AndroidElement profileEditBtn;
+	
+	//ChangePassword Repository
+	@AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Enter your old password']")
+	public AndroidElement oldPasswordField;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'New password']//following::android.widget.EditText[1]")
+	public AndroidElement newPasswordField;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Confirm Password']//following::android.widget.EditText")
+	public AndroidElement newPasswordFieldConfirm;
+	@AndroidFindBy(id = "com.darisni.teacher:id/enterBtn")
+	public AndroidElement confirmBtn;
+	
 
 	public void logout() {
 		profileBtn.click();
@@ -32,8 +47,14 @@ public class LogoutPage extends BaseClass {
 		sleep(3000);
 		androidDriver.quit();
 	}
+	
+	public void changePassword() {
+		oldPasswordField.sendKeys("4916");
+		newPasswordField.sendKeys("491600");
+		newPasswordFieldConfirm.sendKeys("491600");
+	}
 
-	public LogoutPage(AndroidDriver<MobileElement> androidDriver) {
+	public ProfilePage(AndroidDriver<MobileElement> androidDriver) {
 		this.androidDriver = androidDriver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);
 	}

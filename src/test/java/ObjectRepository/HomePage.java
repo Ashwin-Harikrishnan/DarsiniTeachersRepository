@@ -25,8 +25,11 @@ public class HomePage extends BaseClass {
 	public AndroidElement searchBar;
 	@AndroidFindBy(id = "com.darisni.teacher:id/emptyTextView")
 	public AndroidElement noResultsMessage;
+	@AndroidFindBy(id = "com.darisni.teacher:id/txt_comments")
+	public AndroidElement commentCountHomeFeed;
+	@AndroidFindBy(id = "com.darisni.teacher:id/txtBtnEdit")
+	public AndroidElement profileEditBtn;
 	
-
 	
 
 	public void assignmentNavigationMethod() {

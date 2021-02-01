@@ -6,8 +6,8 @@
       <class name="TestScripts.ClassFeedTest">
         <methods>
           <include name="setup"/>
-          <include name="classFeedAnnouncementTest"/>
           <include name="setUP"/>
+          <include name="classFeedAssignmentTest"/>
         </methods>
       </class> <!-- TestScripts.ClassFeedTest -->
     </classes>

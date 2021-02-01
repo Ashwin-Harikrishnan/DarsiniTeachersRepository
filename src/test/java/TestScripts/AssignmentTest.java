@@ -3,6 +3,7 @@ package TestScripts;
 import static org.testng.Assert.assertEquals;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -10,33 +11,36 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
-import ObjectRepository.AddAssignmentPage;
+import ObjectRepository.AssignmentPage;
 import ObjectRepository.ClassroomPage;
 import ObjectRepository.HomePage;
 import ObjectRepository.LoginPage;
-import ObjectRepository.LogoutPage;
+import ObjectRepository.ProfilePage;
 import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
-public class AddAssignmentTest extends BaseClass {
+public class AssignmentTest extends BaseClass {
 	ClassroomPage classroomObj;
-	AddAssignmentPage assignmentObj;
+	AssignmentPage assignmentObj;
 	LoginPage loginObj;
 	static TestDataImport TestDataObj;
 	static ExcelDataImport excelDataObj;
 	static String[] testData;
-	LogoutPage logoutObj;
+	ProfilePage logoutObj;
 	String actualstring;
 	String expectedstring;
 	HomePage homeObj;
+	String verification = "";
+	ArrayList<String> actualArray = new ArrayList<String>();
+	ArrayList<String> expectedArray = new ArrayList<String>();	
 
 	@BeforeMethod
 	public void setup() throws MalformedURLException {
 
 		loginObj = new LoginPage(androidDriver);
 		classroomObj = new ClassroomPage(androidDriver);
-		assignmentObj = new AddAssignmentPage(androidDriver);
-		logoutObj = new LogoutPage(androidDriver);
+		assignmentObj = new AssignmentPage(androidDriver);
+		logoutObj = new ProfilePage(androidDriver);
 		TestDataObj = new TestDataImport();
 		excelDataObj = new ExcelDataImport();
 		excelDataObj.readExcel("AssignmentPage");
@@ -45,12 +49,12 @@ public class AddAssignmentTest extends BaseClass {
 
 	}
 
-	//@Test(priority = 0)
+	@Test(priority = 0)
 	public void addAssignmentTest() {
 		try {
 			testData = TestDataObj.getAddAssignmentData();
 			loginObj.validLogin();
-			classroomObj.assignmentNavigationMethod("Central Integration Planner");
+			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
 			sleep(1000);
 			actualstring = customXpathMethod(testData[0]).getText();
@@ -65,13 +69,13 @@ public class AddAssignmentTest extends BaseClass {
 
 	}
 	
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	public void editAssignmentTest() {
 		try {
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
-		customXpathMethod("Central Integration Planner").click();
+		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.editAssignmentNavigation();
 		assignmentObj.editAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
 		sleep(1000);
@@ -87,13 +91,13 @@ public class AddAssignmentTest extends BaseClass {
 
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void disableAssignmentCommentsTest() {
 		try {
 		
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
-		customXpathMethod("Central Integration Planner").click();
+		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.disableAssignmentComments();
 		
 		
@@ -102,7 +106,7 @@ public class AddAssignmentTest extends BaseClass {
 			System.out.println(e);
 		}
 	}
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	public void enableAssignmentCommentsTest() {
 		try {
 		
@@ -110,17 +114,61 @@ public class AddAssignmentTest extends BaseClass {
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		//customXpathMethod("Central Integration Planner").click();
 		classroomObj.enableAssignmentComments();
+		classroomObj.backBtn.click();
 		}
 		catch(Exception e) {
 			System.out.println(e);
 		}
 	}
-	@Test
+	
+	@Test(priority = 4)
+	public void assignmentCommentTest() {
+		try {
+		testData = TestDataObj.getEditAssignmentData();
+		//loginObj.validLogin();
+		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		customXpathMethod("Internal Applications Consultant").click();
+		classroomObj.assignmentDetailsNavigation(testData[0]);
+		classroomObj.sendComment();
+		//Details comment count check
+		verification = classroomObj.commentCount.getText();
+		actualArray.add(verification);
+		expectedArray.add("Comments (1)");
+	
+		//Classfeed comment count
+		classroomObj.detailsPageBackBtn.click();
+		classroomObj.assignmentTab.click();
+		verification = classroomObj.classFeedCommentCount.getText();
+		actualArray.add(verification);
+		expectedArray.add("1 Comment");
+		
+		//HomePage comment count
+		classroomObj.backBtn.click();
+		homeObj.homeBtn.click();
+		homeObj.searchBar.sendKeys(testData[0]);
+		homeObj.searchBtn.click();
+		verification = homeObj.commentCountHomeFeed.getText();
+		actualArray.add(verification);
+		expectedArray.add("1 Comment");
+		classroomObj.backBtn.click();
+		
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
+		assertEquals(actualArray, expectedArray);
+
+		
+	}
+
+		
+	
+	@Test(priority = 5)
 	public void deleteAssignmentTest() {
 		try {
 		//loginObj.validLogin();
-		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
-		//customXpathMethod("Central Integration Planner").click();
+		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
+		//customXpathMethod("").click();
 		classroomObj.deleteAssignment();
 		classroomObj.backBtn.click();
 		homeObj.homeBtn.click();
@@ -130,7 +178,7 @@ public class AddAssignmentTest extends BaseClass {
 		homeObj.searchBtn.click();
 		actualstring = homeObj.noResultsMessage.getText();
 		expectedstring = "No results found";
-		
+		classroomObj.backBtn.click();
 		}
 	 catch (Exception e) {
 		System.out.println(e);
@@ -144,7 +192,7 @@ public class AddAssignmentTest extends BaseClass {
 	@AfterClass
 	public void endTest() {
 		sleep(1000);
-		classroomObj.backBtn.click();
+		//classroomObj.backBtn.click();
 		logoutObj.logout();
 
 	}

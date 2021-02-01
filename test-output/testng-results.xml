@@ -1,93 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5987" started-at="2021-01-25T11:12:28Z" finished-at="2021-01-25T11:12:34Z">
+  <suite name="Default suite" duration-ms="265368" started-at="2021-02-01T06:10:49Z" finished-at="2021-02-01T06:15:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5987" started-at="2021-01-25T11:12:28Z" finished-at="2021-01-25T11:12:34Z">
-      <class name="TestScripts.AddAssignmentTest">
-        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.AddAssignmentTest@6e06451e]" name="setUP" is-config="true" duration-ms="12946" started-at="2021-01-25T16:42:15Z" finished-at="2021-01-25T16:42:28Z">
+    <test name="Default test" duration-ms="265368" started-at="2021-02-01T06:10:49Z" finished-at="2021-02-01T06:15:14Z">
+      <class name="TestScripts.AnnouncementTest">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setUP" is-config="true" duration-ms="13384" started-at="2021-02-01T11:40:36Z" finished-at="2021-02-01T11:40:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUP -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AddAssignmentTest@6e06451e]" name="setup" is-config="true" duration-ms="902" started-at="2021-01-25T16:42:28Z" finished-at="2021-01-25T16:42:29Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="967" started-at="2021-02-01T11:40:49Z" finished-at="2021-02-01T11:40:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="deleteAssignmentTest()[pri:0, instance:TestScripts.AddAssignmentTest@6e06451e]" name="deleteAssignmentTest" duration-ms="2262" started-at="2021-01-25T16:42:29Z" finished-at="2021-01-25T16:42:31Z">
+        <test-method status="PASS" signature="addAnnouncementTest()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="addAnnouncementTest" duration-ms="211374" started-at="2021-02-01T11:40:50Z" finished-at="2021-02-01T11:44:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteAssignmentTest -->
-        <test-method status="FAIL" signature="endTest()[pri:0, instance:TestScripts.AddAssignmentTest@6e06451e]" name="endTest" is-config="true" duration-ms="0" started-at="2021-01-25T16:42:31Z" finished-at="2021-01-25T16:42:31Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Can't locate an element by this strategy: By.chained({By.id: com.darisni.teacher:id/img_back_navigation})]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.id: com.darisni.teacher:id/img_back_navigation})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(<generated>)
-	at TestScripts.AddAssignmentTest.endTest(AddAssignmentTest.java:147)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:115)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@50eca7c6 (tried for 1 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
-	... 28 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.darisni.teacher:id/img_back_navigation})
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-3L5DI794', ip: '192.168.194.226', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- addAnnouncementTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="5" started-at="2021-02-01T11:44:21Z" finished-at="2021-02-01T11:44:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=addAnnouncementTest status=SUCCESS method=AnnouncementTest.addAnnouncementTest()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endTest -->
-      </class> <!-- TestScripts.AddAssignmentTest -->
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="74" started-at="2021-02-01T11:44:21Z" finished-at="2021-02-01T11:44:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="editAnnoucementTest()[pri:1, instance:TestScripts.AnnouncementTest@4566e5bd]" name="editAnnoucementTest" duration-ms="22349" started-at="2021-02-01T11:44:21Z" finished-at="2021-02-01T11:44:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editAnnoucementTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-01T11:44:44Z" finished-at="2021-02-01T11:44:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=editAnnoucementTest status=SUCCESS method=AnnouncementTest.editAnnoucementTest()[pri:1, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="48" started-at="2021-02-01T11:44:44Z" finished-at="2021-02-01T11:44:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="disableAnnouncementCommentsTest()[pri:2, instance:TestScripts.AnnouncementTest@4566e5bd]" name="disableAnnouncementCommentsTest" duration-ms="7325" started-at="2021-02-01T11:44:44Z" finished-at="2021-02-01T11:44:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- disableAnnouncementCommentsTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-01T11:44:51Z" finished-at="2021-02-01T11:44:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=disableAnnouncementCommentsTest status=SUCCESS method=AnnouncementTest.disableAnnouncementCommentsTest()[pri:2, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="35" started-at="2021-02-01T11:44:51Z" finished-at="2021-02-01T11:44:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="enableAnnouncementCommentsTest()[pri:3, instance:TestScripts.AnnouncementTest@4566e5bd]" name="enableAnnouncementCommentsTest" duration-ms="5933" started-at="2021-02-01T11:44:51Z" finished-at="2021-02-01T11:44:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enableAnnouncementCommentsTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="0" started-at="2021-02-01T11:44:57Z" finished-at="2021-02-01T11:44:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=enableAnnouncementCommentsTest status=SUCCESS method=AnnouncementTest.enableAnnouncementCommentsTest()[pri:3, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="29" started-at="2021-02-01T11:44:57Z" finished-at="2021-02-01T11:44:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="announcementCommentTest()[pri:4, instance:TestScripts.AnnouncementTest@4566e5bd]" name="announcementCommentTest" duration-ms="15798" started-at="2021-02-01T11:44:57Z" finished-at="2021-02-01T11:45:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- announcementCommentTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-01T11:45:13Z" finished-at="2021-02-01T11:45:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=announcementCommentTest status=SUCCESS method=AnnouncementTest.announcementCommentTest()[pri:4, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="32" started-at="2021-02-01T11:45:13Z" finished-at="2021-02-01T11:45:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="deleteAnnouncementTest()[pri:5, instance:TestScripts.AnnouncementTest@4566e5bd]" name="deleteAnnouncementTest" duration-ms="1366" started-at="2021-02-01T11:45:13Z" finished-at="2021-02-01T11:45:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAnnouncementTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="0" started-at="2021-02-01T11:45:14Z" finished-at="2021-02-01T11:45:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=deleteAnnouncementTest status=SUCCESS method=AnnouncementTest.deleteAnnouncementTest()[pri:5, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportResult -->
+        <test-method status="PASS" signature="endSuite()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="endSuite" is-config="true" duration-ms="1117" started-at="2021-02-01T11:45:14Z" finished-at="2021-02-01T11:45:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSuite -->
+      </class> <!-- TestScripts.AnnouncementTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
