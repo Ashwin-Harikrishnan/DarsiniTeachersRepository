@@ -49,6 +49,7 @@ public class AddClassroomPage extends BaseClass{
 		clickWait(addClassBtn);
 		addClassBtn.click();
 		clickWait(className);
+		log.info("Entered classroom page");
 		className.sendKeys(classNameFaker);
 		
 		//subject start

@@ -46,10 +46,14 @@ public class AddClassroomTest extends BaseClass {
 	public void addClassroomTest() {
 		
 		try {
+			eTest = eReports.createTest("Add Classroom");
+			eTest.assignCategory("Classroom");
 		testData = TestDataObj.getAddClassroomData();
 
 		loginObj.validLogin();
+		log.info("Login complete");
 		addClassObj.addClassRoom(testData[0], testData[1], testData[2], testData[3], testData[4], testData[5]);
+		
 		testData = TestDataObj.getAddClassroomData();
 		clickWait(homeObj.classBtn);
 		System.out.println(testData[0]);
@@ -63,7 +67,8 @@ public class AddClassroomTest extends BaseClass {
 		//classroomObj.backBtn.click();
 		}
 		catch(Exception e) {
-			
+			e.printStackTrace();
+			log.info("Entered verification method");
 		
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);

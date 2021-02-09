@@ -54,8 +54,10 @@ public class AnnouncementTest extends BaseClass {
 			eTest = eReports.createTest("Add Announcement");
 			eTest.assignCategory("Announcement");
 			System.out.println("addAnnouncementTest START");
+			log.info("Add announcement test start");
 			testData = TestDataObj.getAddAnnouncementData();
 			loginObj.validLogin();
+			log.info("Login method complete");
 			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			announcementObj.addAnnouncement(testData[0], testData[1], testData[2], Boolean.parseBoolean(testData[3]),
 					Boolean.parseBoolean(testData[4]));
@@ -66,6 +68,7 @@ public class AnnouncementTest extends BaseClass {
 
 		} catch (Exception e) {
 			System.out.println(e);
+			log.info("Enter verification method");
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
@@ -80,6 +83,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Edit Announcement");
 			eTest.assignCategory("Announcement");
+			log.info("Edit announcement test start");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.editAnnouncementNavigation();
 			announcementObj.editAnnouncement(testData[0], testData[1], testData[2], Boolean.parseBoolean(testData[3]),
@@ -92,6 +96,7 @@ public class AnnouncementTest extends BaseClass {
 
 		} catch (Exception e) {
 			System.out.println(e);
+			log.info("Entered verification method");
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
@@ -106,6 +111,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Disable comments test");
 			eTest.assignCategory("Announcement");
+			log.info("Entered disable announcement comments method");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.disableAnnouncementComments();
 		} catch (Exception e) {
@@ -121,6 +127,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Enable comments Test");
 			eTest.assignCategory("Announcement");
+			log.info("Entered enable announcement comments method");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.enableAnnouncementComments();
 			classroomObj.backBtn.click();
@@ -137,6 +144,7 @@ public class AnnouncementTest extends BaseClass {
 		//classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		eTest = eReports.createTest("Announcement comment test");
 		eTest.assignCategory("Announcement");
+		log.info("Entered announcement comment test method");
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.announcementDetailsNavigation(testData[0]);
 		classroomObj.sendComment();
@@ -164,6 +172,7 @@ public class AnnouncementTest extends BaseClass {
 
 		} catch (Exception e) {
 			System.out.println(e);
+			log.info("Entered verification method");
 		}
 		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
 		assertEquals(actualArray, expectedArray);
@@ -180,6 +189,7 @@ public class AnnouncementTest extends BaseClass {
 			//classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			eTest = eReports.createTest("Delete Announcement");
 			eTest.assignCategory("Announcement");
+			log.info("Entered delete announcement method");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.deleteAnnouncement();
 			sleep(500);
@@ -194,6 +204,7 @@ public class AnnouncementTest extends BaseClass {
 
 		} catch (Exception e) {
 			System.out.println(e);
+			log.info("Entered verification method");
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		Assert.assertEquals(expectedstring, actualstring);
