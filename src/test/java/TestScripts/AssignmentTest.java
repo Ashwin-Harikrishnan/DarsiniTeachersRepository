@@ -52,6 +52,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 0)
 	public void addAssignmentTest() {
 		try {
+			eTest = eReports.createTest("Add Assignment test");
+			eTest.assignCategory("Assignment");
 			testData = TestDataObj.getAddAssignmentData();
 			loginObj.validLogin();
 			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
@@ -72,6 +74,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 1)
 	public void editAssignmentTest() {
 		try {
+			eTest = eReports.createTest("Edit Assignment test");
+			eTest.assignCategory("Assignment");
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
@@ -94,7 +98,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 2)
 	public void disableAssignmentCommentsTest() {
 		try {
-		
+			eTest = eReports.createTest("Disable comments test");
+			eTest.assignCategory("Assignment");
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		customXpathMethod("Internal Applications Consultant").click();
@@ -109,7 +114,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 3)
 	public void enableAssignmentCommentsTest() {
 		try {
-		
+			eTest = eReports.createTest("Enable comments test");
+			eTest.assignCategory("Assignment");
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		//customXpathMethod("Central Integration Planner").click();
@@ -124,6 +130,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 4)
 	public void assignmentCommentTest() {
 		try {
+			eTest = eReports.createTest("Assignment comment test");
+			eTest.assignCategory("Assignment");
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
@@ -166,6 +174,8 @@ public class AssignmentTest extends BaseClass {
 	@Test(priority = 5)
 	public void deleteAssignmentTest() {
 		try {
+			eTest = eReports.createTest("Delete Assignment test");
+			eTest.assignCategory("Assignment");
 		//loginObj.validLogin();
 		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		//customXpathMethod("").click();

@@ -48,10 +48,6 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import Utility.Utilities;
 
 
-
-
-
-
 public class BaseClass {
 	
 	//new variables
@@ -67,8 +63,9 @@ public class BaseClass {
 	public File directory;
 	public static Utilities utilityObj;
 	public String projectFolder = System.getProperty("user.dir");
-	public String log4jConfPath = projectFolder + "/src/test/java/com/Salesboost_Adminpanel/resources/Log4j.properties";
+	public String log4jConfPath = projectFolder + "/src/test/resources/Log4j.properties";
 	public String logPath = "";
+	public static String currentDateTime = "";
 	//vaariables end
 	public static AndroidDriver<MobileElement> androidDriver;
 
@@ -79,7 +76,7 @@ public class BaseClass {
 			mobileDriver();
 			log = Logger.getLogger(BaseClass.class.getName());
 		
-			//reportTimestamp = getCurrentDateTime();// for providing current data and time for log file, use the same
+			reportTimestamp = getCurrentDateTime();// for providing current data and time for log file, use the same
 													// time stamp in report zip for relative path
 			reportDir = "C:/DarsiniTeachers_Automation/Reports/Report_" + reportTimestamp;// creates report folder with time
 																						// stamp
@@ -167,7 +164,7 @@ public class BaseClass {
 	private void extendReport() {
 		try {
 			log.info("Report initiated");
-			esReporter = new ExtentSparkReporter(reportDir + "/TestReport_" + ".html");
+			esReporter = new ExtentSparkReporter(reportDir + "/TestReport_" + getCurrentDateTime()+ ".html");
 			esReporter.config().setDocumentTitle("Automation Report");
 			esReporter.config().setReportName("Darsini Automation Report");
 			esReporter.config().setTheme(Theme.STANDARD);
@@ -216,6 +213,17 @@ public class BaseClass {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	private String getCurrentDateTime() {
+		try {
+			log.info("Current date and time");
+			df = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
+			date = new Date();
+			System.setProperty("currentDateTime", df.format(new Date()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return currentDateTime = df.format(date);
 	}
 
 }
