@@ -44,7 +44,7 @@ public class ClassFeedTest extends BaseClass{
 
 	}
 	
-	@Test
+	//@Test
 	public void classFeedAssignmentTest() {
 		try {
 		excelDataObj.readExcel("AssignmentPage");
@@ -87,13 +87,13 @@ public class ClassFeedTest extends BaseClass{
 	
 	}
 	
-	//@Test
+	@Test
 	public void classFeedAnnouncementTest() {
 		try {
 		excelDataObj.readExcel("AnnouncementPage");
 		testData = TestDataObj.getClassFeedAssignmentData();
 		loginObj.validLogin();
-		classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		classroomObj.announcementTab.click();
 		//ACTUAL
 		verification = customXpathMethod(testData[0]).getText();

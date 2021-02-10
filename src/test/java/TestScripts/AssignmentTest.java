@@ -54,20 +54,24 @@ public class AssignmentTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Add Assignment test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered add assignment test");
 			testData = TestDataObj.getAddAssignmentData();
 			loginObj.validLogin();
+			log.info("Login complete");
 			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
 			sleep(1000);
 			actualstring = customXpathMethod(testData[0]).getText();
 			expectedstring = testData[0];
 			classroomObj.backBtn.click();
+			log.info("Entered verification method");
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
+		log.info("Verification complete");
 
 	}
 	
@@ -76,6 +80,7 @@ public class AssignmentTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Edit Assignment test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered edit assignment test");
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
@@ -86,20 +91,23 @@ public class AssignmentTest extends BaseClass {
 		actualstring = customXpathMethod(testData[0]).getText();
 		expectedstring = testData[0];
 		classroomObj.backBtn.click();
+		log.info("Entered verification method");
 
 	} catch (Exception e) {
 		System.out.println(e);
 	}
 	System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 	assertEquals(actualstring, expectedstring);
+	log.info("Verification complete");
 
 	}
 	
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void disableAssignmentCommentsTest() {
 		try {
 			eTest = eReports.createTest("Disable comments test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered assignment comments disable test");
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		customXpathMethod("Internal Applications Consultant").click();
@@ -116,6 +124,7 @@ public class AssignmentTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Enable comments test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered assignment comments enable test");
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		//customXpathMethod("Central Integration Planner").click();
@@ -132,12 +141,15 @@ public class AssignmentTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Assignment comment test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered assignment add comments test");
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.assignmentDetailsNavigation(testData[0]);
 		classroomObj.sendComment();
+		
+		log.info("Entered verification method");
 		//Details comment count check
 		verification = classroomObj.commentCount.getText();
 		actualArray.add(verification);
@@ -165,7 +177,7 @@ public class AssignmentTest extends BaseClass {
 		}
 		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
 		assertEquals(actualArray, expectedArray);
-
+		log.info("Entered verification complete");
 		
 	}
 
@@ -176,6 +188,7 @@ public class AssignmentTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Delete Assignment test");
 			eTest.assignCategory("Assignment");
+			log.info("Entered delete assignment test");
 		//loginObj.validLogin();
 		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		//customXpathMethod("").click();
@@ -189,12 +202,14 @@ public class AssignmentTest extends BaseClass {
 		actualstring = homeObj.noResultsMessage.getText();
 		expectedstring = "No results found";
 		classroomObj.backBtn.click();
+		log.info("Entered verification method");
 		}
 	 catch (Exception e) {
 		System.out.println(e);
 	}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		Assert.assertEquals(expectedstring, actualstring);
+		log.info("Verification complete");
 	}
 	
 	

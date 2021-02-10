@@ -53,6 +53,8 @@ public class AnnouncementTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Add Announcement");
 			eTest.assignCategory("Announcement");
+			log.info("Entered add announcement test");
+			
 			System.out.println("addAnnouncementTest START");
 			log.info("Add announcement test start");
 			testData = TestDataObj.getAddAnnouncementData();
@@ -65,13 +67,15 @@ public class AnnouncementTest extends BaseClass {
 			actualstring = customXpathMethod(testData[0]).getText();
 			expectedstring = testData[0];
 			classroomObj.backBtn.click();
+			log.info("Entered verification method");
 
 		} catch (Exception e) {
 			System.out.println(e);
-			log.info("Enter verification method");
+			
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
+		log.info("Verification complete");
 
 	}
 
@@ -83,7 +87,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Edit Announcement");
 			eTest.assignCategory("Announcement");
-			log.info("Edit announcement test start");
+			log.info("Entered edit announcement test");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.editAnnouncementNavigation();
 			announcementObj.editAnnouncement(testData[0], testData[1], testData[2], Boolean.parseBoolean(testData[3]),
@@ -93,13 +97,15 @@ public class AnnouncementTest extends BaseClass {
 			actualstring = customXpathMethod(testData[0]).getText();
 			expectedstring = testData[0];
 			classroomObj.backBtn.click();
+			log.info("Entered verification method");
 
 		} catch (Exception e) {
 			System.out.println(e);
-			log.info("Entered verification method");
+			
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
+		log.info("Verification complete");
 
 	}
 
@@ -111,7 +117,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Disable comments test");
 			eTest.assignCategory("Announcement");
-			log.info("Entered disable announcement comments method");
+			log.info("Entered disable announcement comments test");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.disableAnnouncementComments();
 		} catch (Exception e) {
@@ -127,7 +133,7 @@ public class AnnouncementTest extends BaseClass {
 			// classroomObj.assignmentNavigationMethod("Central Integration Planner");
 			eTest = eReports.createTest("Enable comments Test");
 			eTest.assignCategory("Announcement");
-			log.info("Entered enable announcement comments method");
+			log.info("Entered enable announcement comments test");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.enableAnnouncementComments();
 			classroomObj.backBtn.click();
@@ -144,11 +150,12 @@ public class AnnouncementTest extends BaseClass {
 		//classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		eTest = eReports.createTest("Announcement comment test");
 		eTest.assignCategory("Announcement");
-		log.info("Entered announcement comment test method");
+		log.info("Entered announcement comment test test");
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.announcementDetailsNavigation(testData[0]);
 		classroomObj.sendComment();
 		
+		log.info("Entered verification method");
 		//Details comment count check
 		verification = classroomObj.commentCount.getText();
 		actualArray.add(verification);
@@ -172,10 +179,11 @@ public class AnnouncementTest extends BaseClass {
 
 		} catch (Exception e) {
 			System.out.println(e);
-			log.info("Entered verification method");
+			
 		}
 		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
 		assertEquals(actualArray, expectedArray);
+		log.info("Verification complete");
 
 		
 	}
@@ -186,10 +194,10 @@ public class AnnouncementTest extends BaseClass {
 		try {
 			testData = TestDataObj.getEditAnnouncementData();
 			//loginObj.validLogin();
-			//classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
+			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			eTest = eReports.createTest("Delete Announcement");
 			eTest.assignCategory("Announcement");
-			log.info("Entered delete announcement method");
+			log.info("Entered delete announcement test");
 			customXpathMethod("Internal Applications Consultant").click();
 			classroomObj.deleteAnnouncement();
 			sleep(500);
@@ -201,13 +209,15 @@ public class AnnouncementTest extends BaseClass {
 			homeObj.searchBtn.click();
 			actualstring = homeObj.noResultsMessage.getText();
 			expectedstring = "No results found";
+			log.info("Entered verification method");
 
 		} catch (Exception e) {
 			System.out.println(e);
-			log.info("Entered verification method");
+			
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		Assert.assertEquals(expectedstring, actualstring);
+		log.info("Verification complete");
 	}
 
 	//@AfterClass

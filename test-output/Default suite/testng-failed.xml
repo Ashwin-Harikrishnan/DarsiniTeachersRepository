@@ -3,18 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestScripts.AnnouncementTest">
+      <class name="TestScripts.ClassFeedTest">
         <methods>
-          <include name="editAnnoucementTest"/>
-          <include name="announcementCommentTest"/>
           <include name="setup"/>
-          <include name="addAnnouncementTest"/>
+          <include name="endSuite"/>
           <include name="setUP"/>
-          <include name="deleteAnnouncementTest"/>
-          <include name="disableAnnouncementCommentsTest"/>
-          <include name="enableAnnouncementCommentsTest"/>
+          <include name="classFeedAssignmentTest"/>
+          <include name="testReportResult"/>
         </methods>
-      </class> <!-- TestScripts.AnnouncementTest -->
+      </class> <!-- TestScripts.ClassFeedTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

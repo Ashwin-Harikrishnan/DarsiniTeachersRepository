@@ -1,135 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="268766" started-at="2021-02-09T08:34:11Z" finished-at="2021-02-09T08:38:40Z">
+  <suite name="Default suite" duration-ms="192610" started-at="2021-02-10T07:16:41Z" finished-at="2021-02-10T07:19:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="268766" started-at="2021-02-09T08:34:11Z" finished-at="2021-02-09T08:38:40Z">
-      <class name="TestScripts.AnnouncementTest">
-        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setUP" is-config="true" duration-ms="18109" started-at="2021-02-09T14:03:53Z" finished-at="2021-02-09T14:04:11Z">
+    <test name="Default test" duration-ms="192610" started-at="2021-02-10T07:16:41Z" finished-at="2021-02-10T07:19:54Z">
+      <class name="TestScripts.HomeFeedTest">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="setUP" is-config="true" duration-ms="12230" started-at="2021-02-10T12:46:29Z" finished-at="2021-02-10T12:46:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUP -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="1217" started-at="2021-02-09T14:04:11Z" finished-at="2021-02-09T14:04:12Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="setup" is-config="true" duration-ms="247" started-at="2021-02-10T12:46:41Z" finished-at="2021-02-10T12:46:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addAnnouncementTest()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="addAnnouncementTest" duration-ms="214195" started-at="2021-02-09T14:04:12Z" finished-at="2021-02-09T14:07:47Z">
+        <test-method status="PASS" signature="HomeFeedAssignmentTest()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="HomeFeedAssignmentTest" duration-ms="192347" started-at="2021-02-10T12:46:41Z" finished-at="2021-02-10T12:49:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addAnnouncementTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="7" started-at="2021-02-09T14:07:47Z" finished-at="2021-02-09T14:07:47Z">
+        </test-method> <!-- HomeFeedAssignmentTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-10T12:49:54Z" finished-at="2021-02-10T12:49:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=addAnnouncementTest status=SUCCESS method=AnnouncementTest.addAnnouncementTest()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
+                <![CDATA[[TestResult name=HomeFeedAssignmentTest status=SUCCESS method=HomeFeedTest.HomeFeedAssignmentTest()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="105" started-at="2021-02-09T14:07:47Z" finished-at="2021-02-09T14:07:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="editAnnoucementTest()[pri:1, instance:TestScripts.AnnouncementTest@4566e5bd]" name="editAnnoucementTest" duration-ms="22693" started-at="2021-02-09T14:07:47Z" finished-at="2021-02-09T14:08:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editAnnoucementTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-09T14:08:09Z" finished-at="2021-02-09T14:08:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=editAnnoucementTest status=SUCCESS method=AnnouncementTest.editAnnoucementTest()[pri:1, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="70" started-at="2021-02-09T14:08:09Z" finished-at="2021-02-09T14:08:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="disableAnnouncementCommentsTest()[pri:2, instance:TestScripts.AnnouncementTest@4566e5bd]" name="disableAnnouncementCommentsTest" duration-ms="7728" started-at="2021-02-09T14:08:09Z" finished-at="2021-02-09T14:08:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- disableAnnouncementCommentsTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="0" started-at="2021-02-09T14:08:17Z" finished-at="2021-02-09T14:08:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=disableAnnouncementCommentsTest status=SUCCESS method=AnnouncementTest.disableAnnouncementCommentsTest()[pri:2, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="36" started-at="2021-02-09T14:08:17Z" finished-at="2021-02-09T14:08:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="enableAnnouncementCommentsTest()[pri:3, instance:TestScripts.AnnouncementTest@4566e5bd]" name="enableAnnouncementCommentsTest" duration-ms="4991" started-at="2021-02-09T14:08:17Z" finished-at="2021-02-09T14:08:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- enableAnnouncementCommentsTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="0" started-at="2021-02-09T14:08:22Z" finished-at="2021-02-09T14:08:22Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=enableAnnouncementCommentsTest status=SUCCESS method=AnnouncementTest.enableAnnouncementCommentsTest()[pri:3, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="50" started-at="2021-02-09T14:08:22Z" finished-at="2021-02-09T14:08:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="announcementCommentTest()[pri:4, instance:TestScripts.AnnouncementTest@4566e5bd]" name="announcementCommentTest" duration-ms="16186" started-at="2021-02-09T14:08:22Z" finished-at="2021-02-09T14:08:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- announcementCommentTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-09T14:08:38Z" finished-at="2021-02-09T14:08:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=announcementCommentTest status=SUCCESS method=AnnouncementTest.announcementCommentTest()[pri:4, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="setup" is-config="true" duration-ms="33" started-at="2021-02-09T14:08:38Z" finished-at="2021-02-09T14:08:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="deleteAnnouncementTest()[pri:5, instance:TestScripts.AnnouncementTest@4566e5bd]" name="deleteAnnouncementTest" duration-ms="1431" started-at="2021-02-09T14:08:39Z" finished-at="2021-02-09T14:08:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteAnnouncementTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="0" started-at="2021-02-09T14:08:40Z" finished-at="2021-02-09T14:08:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=deleteAnnouncementTest status=SUCCESS method=AnnouncementTest.deleteAnnouncementTest()[pri:5, instance:TestScripts.AnnouncementTest@4566e5bd] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="endSuite()[pri:0, instance:TestScripts.AnnouncementTest@4566e5bd]" name="endSuite" is-config="true" duration-ms="1314" started-at="2021-02-09T14:08:40Z" finished-at="2021-02-09T14:08:41Z">
+        <test-method status="PASS" signature="endSuite()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="endSuite" is-config="true" duration-ms="792" started-at="2021-02-10T12:49:54Z" finished-at="2021-02-10T12:49:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
-      </class> <!-- TestScripts.AnnouncementTest -->
+      </class> <!-- TestScripts.HomeFeedTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

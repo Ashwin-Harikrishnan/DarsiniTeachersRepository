@@ -60,7 +60,7 @@ public class AssignmentPage extends BaseClass{
 		assignmentDescription.sendKeys(assignmentDesc);
 		assignmentFileUpload.click();
 		browseUploadBtn.click();
-		sleep(1000);
+		sleep(3000);
 		scrollUpMob(2);
 		clickWait(TestUploadFile);
 		TestUploadFile.click();
@@ -96,13 +96,13 @@ public class AssignmentPage extends BaseClass{
 		
 		assignmentName.sendKeys(assignmentTitle);
 		assignmentDescription.sendKeys(assignmentDesc);
-		assignmentFileUpload.click();
+		/*assignmentFileUpload.click();
 		browseUploadBtn.click();
 		sleep(1000);
 		scrollUpMob(2);
 		clickWait(TestUploadFile);
 		TestUploadFile.click();
-		uploadConfirmBtn.click();
+		uploadConfirmBtn.click();*/
 		assignmentDatepicker.sendKeys(Date);
 		assignmentDatepicker.click();
 		datePickerCancelBtn.click();

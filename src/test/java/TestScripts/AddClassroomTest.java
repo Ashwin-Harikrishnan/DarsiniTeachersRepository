@@ -48,6 +48,7 @@ public class AddClassroomTest extends BaseClass {
 		try {
 			eTest = eReports.createTest("Add Classroom");
 			eTest.assignCategory("Classroom");
+			log.info("Entered add classroom test");
 		testData = TestDataObj.getAddClassroomData();
 
 		loginObj.validLogin();
@@ -64,15 +65,15 @@ public class AddClassroomTest extends BaseClass {
 		actualstring = classroomObj.classroomVerificationText.getText();
 		expectedstring = "Make an announcement or send out an assignment to your students";
 		sleep(1000);
+		log.info("Entered verification method");
 		//classroomObj.backBtn.click();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-			log.info("Entered verification method");
-		
-		}
+			}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		Assert.assertEquals(actualstring, expectedstring);
+		log.info("Verification complete");
 	}
 	
 	@AfterClass

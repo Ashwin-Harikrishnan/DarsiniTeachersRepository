@@ -47,7 +47,7 @@ public class HomeFeedTest extends BaseClass{
 
 	}
 	
-	//@Test
+	@Test(priority = 1)
 public void HomeFeedAnnouncementTest() {
 		try {
 			excelDataObj.readExcel("AnnouncementPage");
@@ -82,11 +82,11 @@ public void HomeFeedAnnouncementTest() {
 		}
 		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
 		assertEquals(actualArray, expectedArray);
-
-		
-		
+		System.out.println();
+	
 	}
-	@Test
+
+	@Test(priority = 0)
 	public void HomeFeedAssignmentTest() {
 			try {
 			excelDataObj.readExcel("AssignmentPage");

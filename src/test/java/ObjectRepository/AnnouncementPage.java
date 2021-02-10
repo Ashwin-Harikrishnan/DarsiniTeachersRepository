@@ -56,7 +56,7 @@ public class AnnouncementPage extends BaseClass{
 		announcementDescription.sendKeys(Desc);
 		announcementAttachments.click();
 		browseUploadBtn.click();
-		sleep(1000);
+		sleep(3000);
 		scrollUpMob(2);
 		clickWait(TestUploadFile);
 		TestUploadFile.click();
@@ -88,13 +88,13 @@ public class AnnouncementPage extends BaseClass{
 		announcementTitle.click();
 		announcementTitle.sendKeys(title);
 		announcementDescription.sendKeys(Desc);
-		announcementAttachments.click();
+		/*announcementAttachments.click();
 		browseUploadBtn.click();
 		sleep(1000);
 		scrollUpMob(2);
 		clickWait(TestUploadFile);
 		TestUploadFile.click();
-		uploadConfirmBtn.click();
+		uploadConfirmBtn.click();*/
 		if(comments)
 		{
 			System.out.println("User has not checked the checkbox");
