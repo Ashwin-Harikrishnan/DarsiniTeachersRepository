@@ -18,11 +18,14 @@ public class ExcelDataImport extends BaseClass{
 	static FileOutputStream outFile;
 	static String cellData = "";
 
+	
 	public void readExcel(String sheetName) {
 		try {
 			System.out.println("Entered readExcel method");
 			log.info("Entered readExcel method");
+			
 			inFile = new FileInputStream(excelPath);
+			
 			//outFile = new FileOutputStream(excelPath);
 			wb = new XSSFWorkbook(inFile);
 			sh= wb.getSheet(sheetName);			
@@ -42,7 +45,7 @@ public class ExcelDataImport extends BaseClass{
 			//cellData = "";
 		
 		}
-		return cellData;
+		return cellData; // testData[1] = cellData
 	}
 	
 	public static String setValue(int i, int j, String cellValue) {

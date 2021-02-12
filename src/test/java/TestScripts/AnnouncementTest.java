@@ -154,6 +154,7 @@ public class AnnouncementTest extends BaseClass {
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.announcementDetailsNavigation(testData[0]);
 		classroomObj.sendComment();
+		sleep(1500);
 		
 		log.info("Entered verification method");
 		//Details comment count check
@@ -223,18 +224,10 @@ public class AnnouncementTest extends BaseClass {
 	//@AfterClass
 	public void endTest() {
 		sleep(1000);
-		// classroomObj.backBtn.click();
+		classroomObj.backBtn.click();
 		logoutObj.logout();
 
 	}
 
-
-	private static void sleep(long m) {
-		try {
-			Thread.sleep(m);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 }

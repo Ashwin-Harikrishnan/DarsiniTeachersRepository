@@ -2,39 +2,39 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="192610" started-at="2021-02-10T07:16:41Z" finished-at="2021-02-10T07:19:54Z">
+  <suite name="Default suite" duration-ms="202093" started-at="2021-02-12T09:41:55Z" finished-at="2021-02-12T09:45:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="192610" started-at="2021-02-10T07:16:41Z" finished-at="2021-02-10T07:19:54Z">
-      <class name="TestScripts.HomeFeedTest">
-        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="setUP" is-config="true" duration-ms="12230" started-at="2021-02-10T12:46:29Z" finished-at="2021-02-10T12:46:41Z">
+    <test name="Default test" duration-ms="202093" started-at="2021-02-12T09:41:55Z" finished-at="2021-02-12T09:45:17Z">
+      <class name="TestScripts.EditProfilePictureTest">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd]" name="setUP" is-config="true" duration-ms="12823" started-at="2021-02-12T15:11:42Z" finished-at="2021-02-12T15:11:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUP -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="setup" is-config="true" duration-ms="247" started-at="2021-02-10T12:46:41Z" finished-at="2021-02-10T12:46:41Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd]" name="setup" is-config="true" duration-ms="912" started-at="2021-02-12T15:11:55Z" finished-at="2021-02-12T15:11:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="HomeFeedAssignmentTest()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="HomeFeedAssignmentTest" duration-ms="192347" started-at="2021-02-10T12:46:41Z" finished-at="2021-02-10T12:49:54Z">
+        <test-method status="PASS" signature="editProfilePictureTest()[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd]" name="editProfilePictureTest" duration-ms="201160" started-at="2021-02-12T15:11:56Z" finished-at="2021-02-12T15:15:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- HomeFeedAssignmentTest -->
-        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="1" started-at="2021-02-10T12:49:54Z" finished-at="2021-02-10T12:49:54Z">
+        </test-method> <!-- editProfilePictureTest -->
+        <test-method status="PASS" signature="testReportResult(org.testng.ITestResult)[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd]" name="testReportResult" is-config="true" duration-ms="5" started-at="2021-02-12T15:15:17Z" finished-at="2021-02-12T15:15:17Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=HomeFeedAssignmentTest status=SUCCESS method=HomeFeedTest.HomeFeedAssignmentTest()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd] output={null}]]]>
+                <![CDATA[[TestResult name=editProfilePictureTest status=SUCCESS method=EditProfilePictureTest.editProfilePictureTest()[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testReportResult -->
-        <test-method status="PASS" signature="endSuite()[pri:0, instance:TestScripts.HomeFeedTest@4566e5bd]" name="endSuite" is-config="true" duration-ms="792" started-at="2021-02-10T12:49:54Z" finished-at="2021-02-10T12:49:54Z">
+        <test-method status="PASS" signature="endSuite()[pri:0, instance:TestScripts.EditProfilePictureTest@4566e5bd]" name="endSuite" is-config="true" duration-ms="1446" started-at="2021-02-12T15:15:17Z" finished-at="2021-02-12T15:15:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
-      </class> <!-- TestScripts.HomeFeedTest -->
+      </class> <!-- TestScripts.EditProfilePictureTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

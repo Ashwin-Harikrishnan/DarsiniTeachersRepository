@@ -53,10 +53,13 @@ public class EditProfilePictureTest extends BaseClass{
 	}
 
 	
-	//@Test
+	@Test
 	public void editProfilePictureTest() {
 		try {
-		loginObj.validLogin();
+			eTest = eReports.createTest("Edit profile picture test");
+			eTest.assignCategory("Profile picture");
+			log.info("Edit profile picture test");
+		//loginObj.validLogin();
 		sleep(500);
 		homeObj.profileBtn.click();
 		logoutObj.profileEditBtn.click();
@@ -66,6 +69,8 @@ public class EditProfilePictureTest extends BaseClass{
 		editprofileObj.selectAPicture.click();
 		editprofileObj.cropPageSave.click();
 		editprofileObj.profileSaveBtn.click();
+		
+		log.info("Entered verification method");
 		expectedstring = "Your profile has been updated successfully";
 		actualstring = editprofileObj.verificationDialog.getText();
 		System.out.println("Profile picture successfully changed");
@@ -75,9 +80,10 @@ public class EditProfilePictureTest extends BaseClass{
 		}
 		System.out.println("Actual: " + actualstring + "\nExpcted: " + expectedstring);
 		assertEquals(actualstring, expectedstring);
+		log.info("Verification complete");
 	}
 	
-	@Test
+	//@Test
 	public void changePasswordTest() {
 		loginObj.validLogin();
 		sleep(500);
@@ -88,14 +94,7 @@ public class EditProfilePictureTest extends BaseClass{
 		
 	}
 	
-	private static void sleep(long m) {
-		try {
-			Thread.sleep(m);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	public void scroll(String visibleText) {
 		androidDriver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""

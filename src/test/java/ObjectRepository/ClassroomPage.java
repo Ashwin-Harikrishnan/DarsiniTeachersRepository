@@ -155,12 +155,5 @@ public class ClassroomPage extends BaseClass {
 		PageFactory.initElements(new AppiumFieldDecorator(this.androidDriver), this);
 	}
 
-	private static void sleep(long m) {
-		try {
-			Thread.sleep(m);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 }

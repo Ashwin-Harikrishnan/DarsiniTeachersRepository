@@ -65,34 +65,46 @@ Faker faker = new Faker();
 		testData[4] = ExcelDataImport.getValue(6, 4);//showParent
 		return testData;
 	}
-	public String[] getHomeFeedAnnouncementData() {
-		testData = new String[5];
-		testData[0] = ExcelDataImport.getValue(13, 0);//title
-		testData[1] = ExcelDataImport.getValue(13, 1);//className
-		testData[2] = ExcelDataImport.getValue(13, 2);//Subject	
-		testData[3] = ExcelDataImport.getValue(13, 3);//Date
-		testData[4] = ExcelDataImport.getValue(13, 4);//comment
-		return testData;
-	}
 	public String[] getHomeFeedAssignmentData() {
 		testData = new String[5];
-		testData[0] = ExcelDataImport.getValue(13, 0);//title
-		testData[1] = ExcelDataImport.getValue(13, 1);//className
-		testData[2] = ExcelDataImport.getValue(13, 2);//Subject	
-		testData[3] = ExcelDataImport.getValue(13, 3);//Date
-		testData[4] = ExcelDataImport.getValue(13, 4);//comment
+		testData[0] = ExcelDataImport.getValue(2, 0);//title
+		testData[1] = ExcelDataImport.getValue(2, 1);//className
+		testData[2] = ExcelDataImport.getValue(2, 2);//Subject	
+		testData[3] = ExcelDataImport.getValue(2, 3);//Date
+		testData[4] = ExcelDataImport.getValue(2, 4);//comment
+		return testData;
+	}
+	public String[] getHomeFeedAnnouncementData() {
+		testData = new String[5];
+		testData[0] = ExcelDataImport.getValue(12, 0);//title
+		testData[1] = ExcelDataImport.getValue(12, 1);//className
+		testData[2] = ExcelDataImport.getValue(12, 2);//Subject	
+		testData[3] = ExcelDataImport.getValue(12, 3);//Date
+		testData[4] = ExcelDataImport.getValue(12, 4);//comment
 		return testData;
 	}
 	
 	public String[] getClassFeedAssignmentData() {
 		testData = new String[7];
-		testData[0] = ExcelDataImport.getValue(21, 0);//title
-		testData[1] = ExcelDataImport.getValue(21, 1);//Desc
-		testData[2] = ExcelDataImport.getValue(21, 2);//Date	
-		testData[3] = ExcelDataImport.getValue(21, 3);//Comments
-		testData[4] = ExcelDataImport.getValue(21, 4);//attachment name
-		testData[5] = ExcelDataImport.getValue(21, 5);//number of views
-		testData[6] = ExcelDataImport.getValue(21, 6);//Due date
+		testData[0] = ExcelDataImport.getValue(2, 0);//title
+		testData[1] = ExcelDataImport.getValue(2, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(2, 2);//Date	
+		testData[3] = ExcelDataImport.getValue(2, 3);//Comments
+		testData[4] = ExcelDataImport.getValue(2, 4);//attachment name
+		testData[5] = ExcelDataImport.getValue(2, 5);//number of views
+		testData[6] = ExcelDataImport.getValue(2, 6);//Due date
+
+		return testData;
+	}
+	public String[] getClassFeedAnnouncementData() {
+		testData = new String[7];
+		testData[0] = ExcelDataImport.getValue(12, 0);//title
+		testData[1] = ExcelDataImport.getValue(12, 1);//Desc
+		testData[2] = ExcelDataImport.getValue(12, 2);//Date	
+		testData[3] = ExcelDataImport.getValue(12, 3);//Comments
+		testData[4] = ExcelDataImport.getValue(12, 4);//attachment name
+		testData[5] = ExcelDataImport.getValue(12, 5);//number of views
+		testData[6] = ExcelDataImport.getValue(12, 6);//Due date
 
 		return testData;
 	}

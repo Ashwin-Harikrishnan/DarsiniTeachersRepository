@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -27,9 +28,11 @@ public class ClassFeedTest extends BaseClass{
 	String actualstring;
 	String expectedstring;
 	String verification = "";
-	ArrayList<String> actualArray = new ArrayList<String>();
-	ArrayList<String> expectedArray = new ArrayList<String>();
-
+	ArrayList<String> actualAssignmentArray = new ArrayList<String>();
+	ArrayList<String> expectedAssignmentArray = new ArrayList<String>();
+	ArrayList<String> actualAnnouncementArray = new ArrayList<String>();
+	ArrayList<String> expectedAnnouncementArray = new ArrayList<String>();
+	
 	@BeforeMethod
 	public void setup() throws MalformedURLException {
 
@@ -39,91 +42,105 @@ public class ClassFeedTest extends BaseClass{
 		logoutObj = new ProfilePage(androidDriver);
 		TestDataObj = new TestDataImport();
 		excelDataObj = new ExcelDataImport();
-		
-		
-
+		excelDataObj.readExcel("ClassFeed");
 	}
 	
-	//@Test
+	@Test(priority = 0)
 	public void classFeedAssignmentTest() {
 		try {
-		excelDataObj.readExcel("AssignmentPage");
+			eTest = eReports.createTest("ClassFeed assignment test");
+			eTest.assignCategory("ClassFeed");
+			log.info("Entered classfeed assignment test");
 		testData = TestDataObj.getClassFeedAssignmentData();
-		loginObj.validLogin();
+		//loginObj.validLogin();
+		log.info("Login complete");
 		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		classroomObj.assignmentTab.click();
+		
+		log.info("Entered verification method");
 		//ACTUAL
 		verification = customXpathMethod(testData[0]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[1]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[2]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[3]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[4]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[5]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 		verification = customXpathMethod(testData[6]).getText();
-		actualArray.add(verification);
+		actualAssignmentArray.add(verification);
 
 		
 		//EXPECTED
-		expectedArray.add(testData[0]);
-		expectedArray.add(testData[1]);
-		expectedArray.add(testData[2]);
-		expectedArray.add(testData[3]);
-		expectedArray.add(testData[4]);
-		expectedArray.add(testData[5]);
-		expectedArray.add(testData[6]);
+		expectedAssignmentArray.add(testData[0]);
+		expectedAssignmentArray.add(testData[1]);
+		expectedAssignmentArray.add(testData[2]);
+		expectedAssignmentArray.add(testData[3]);
+		expectedAssignmentArray.add(testData[4]);
+		expectedAssignmentArray.add(testData[5]);
+		expectedAssignmentArray.add(testData[6]);
 		
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
-		assertEquals(actualArray, expectedArray);
-	
+		System.out.println("Actual: " + actualAssignmentArray + "\nExpcted: " + expectedAssignmentArray);
+		assertEquals(actualAssignmentArray, expectedAssignmentArray);
+		log.info("Verification complete");
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void classFeedAnnouncementTest() {
 		try {
-		excelDataObj.readExcel("AnnouncementPage");
-		testData = TestDataObj.getClassFeedAssignmentData();
-		loginObj.validLogin();
-		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
+			eTest = eReports.createTest("ClassFeed announcement test");
+			eTest.assignCategory("ClassFeed");
+			log.info("Entered classfeed announcement test");
+		testData = TestDataObj.getClassFeedAnnouncementData();
+		//loginObj.validLogin();
+	//	classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		classroomObj.announcementTab.click();
+		
+		log.info("Entered verification method");
 		//ACTUAL
 		verification = customXpathMethod(testData[0]).getText();
-		actualArray.add(verification);
+		actualAnnouncementArray.add(verification);
 		verification = customXpathMethod(testData[1]).getText();
-		actualArray.add(verification);
+		actualAnnouncementArray.add(verification);
 		verification = customXpathMethod(testData[2]).getText();
-		actualArray.add(verification);
+		actualAnnouncementArray.add(verification);
 		verification = customXpathMethod(testData[3]).getText();
-		actualArray.add(verification);
+		actualAnnouncementArray.add(verification);
 		verification = customXpathMethod(testData[4]).getText();
-		actualArray.add(verification);
+		actualAnnouncementArray.add(verification);
 		
 
 		
 		//EXPECTED
-		expectedArray.add(testData[0]);
-		expectedArray.add(testData[1]);
-		expectedArray.add(testData[2]);
-		expectedArray.add(testData[3]);
-		expectedArray.add(testData[4]);
+		expectedAnnouncementArray.add(testData[0]);
+		expectedAnnouncementArray.add(testData[1]);
+		expectedAnnouncementArray.add(testData[2]);
+		expectedAnnouncementArray.add(testData[3]);
+		expectedAnnouncementArray.add(testData[4]);
+		classroomObj.backBtn.click();
 	
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Actual: " + actualArray + "\nExpcted: " + expectedArray);
-		assertEquals(actualArray, expectedArray);
+		System.out.println("Actual: " + actualAnnouncementArray + "\nExpcted: " + expectedAssignmentArray);
+		assertEquals(actualAnnouncementArray, expectedAssignmentArray);
+		log.info("Verification complete");
 	
 	}
-	
+	//@AfterClass
+	public void endTest() {
+		sleep(1000);
+		logoutObj.logout();
+		
+	}
 
 }

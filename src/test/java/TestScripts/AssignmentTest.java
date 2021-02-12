@@ -20,6 +20,7 @@ import TestData.ExcelDataImport;
 import TestData.TestDataImport;
 
 public class AssignmentTest extends BaseClass {
+	
 	ClassroomPage classroomObj;
 	AssignmentPage assignmentObj;
 	LoginPage loginObj;
@@ -55,9 +56,13 @@ public class AssignmentTest extends BaseClass {
 			eTest = eReports.createTest("Add Assignment test");
 			eTest.assignCategory("Assignment");
 			log.info("Entered add assignment test");
+			
+			
 			testData = TestDataObj.getAddAssignmentData();
+			
 			loginObj.validLogin();
 			log.info("Login complete");
+			
 			classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 			assignmentObj.addAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
 			sleep(1000);
@@ -83,7 +88,7 @@ public class AssignmentTest extends BaseClass {
 			log.info("Entered edit assignment test");
 		testData = TestDataObj.getEditAssignmentData();
 		//loginObj.validLogin();
-		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.editAssignmentNavigation();
 		assignmentObj.editAssignment(testData[0], testData[1], testData[2], testData[3],Boolean.parseBoolean(testData[4]),Boolean.parseBoolean(testData[5]));
@@ -102,14 +107,14 @@ public class AssignmentTest extends BaseClass {
 
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void disableAssignmentCommentsTest() {
 		try {
 			eTest = eReports.createTest("Disable comments test");
 			eTest.assignCategory("Assignment");
 			log.info("Entered assignment comments disable test");
 		//loginObj.validLogin();
-		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
+		classroomObj.assignmentNavigationMethod("Internal Applications Consultant");
 		customXpathMethod("Internal Applications Consultant").click();
 		classroomObj.disableAssignmentComments();
 		
@@ -129,7 +134,7 @@ public class AssignmentTest extends BaseClass {
 		//classroomObj.assignmentNavigationMethod("Central Integration Planner");
 		//customXpathMethod("Central Integration Planner").click();
 		classroomObj.enableAssignmentComments();
-		classroomObj.backBtn.click();
+		//classroomObj.backBtn.click();
 		}
 		catch(Exception e) {
 			System.out.println(e);
@@ -214,21 +219,13 @@ public class AssignmentTest extends BaseClass {
 	
 	
 
-	@AfterClass
+	//@AfterClass
 	public void endTest() {
 		sleep(1000);
-		//classroomObj.backBtn.click();
-		logoutObj.logout();
+		classroomObj.backBtn.click();
+		//logoutObj.logout();
 
 	}
 
-	private static void sleep(long m) {
-		try {
-			Thread.sleep(m);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
+	
 }

@@ -82,13 +82,6 @@ public class AddClassroomTest extends BaseClass {
 		logoutObj.logout();
 		
 	}
-	private static void sleep(long m) {
-		try {
-			Thread.sleep(m);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 }
